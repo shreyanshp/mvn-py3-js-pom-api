@@ -4,4 +4,5 @@ LABEL maintainer="github.com/shreyanshp"
 COPY . .
 RUN mkdir -p target
 RUN mvn dependency:resolve-plugins dependency:resolve
+RUN rm Dockerfile && rm pom.xml
 ENTRYPOINT ["/bin/bash"]
