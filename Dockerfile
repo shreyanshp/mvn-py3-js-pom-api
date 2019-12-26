@@ -5,4 +5,7 @@ COPY . .
 RUN mkdir -p target
 RUN mvn dependency:resolve-plugins dependency:resolve
 RUN rm Dockerfile && rm pom.xml
-ENTRYPOINT ["/bin/bash"]
+USER ${USER}
+WORKDIR ${HOME}
+#### Define default command.
+CMD ["/bin/bash"]
