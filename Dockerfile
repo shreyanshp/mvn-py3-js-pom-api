@@ -4,6 +4,7 @@ LABEL maintainer="github.com/shreyanshp"
 COPY . .
 RUN mkdir -p target
 RUN mvn dependency:resolve-plugins dependency:resolve
+RUN mvn dependency:go-offline
 RUN rm Dockerfile && rm pom.xml
 USER ${USER}
 WORKDIR ${HOME}
